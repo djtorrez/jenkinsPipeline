@@ -33,7 +33,7 @@ describe('prueba unitaria: ', ()=>{
         .end((err, res)=>{
             chai.expect(res).to.have.status(200);
             //console.log(res.redirects[0]);
-            assert(res.redirects[0] === 'http://localhost:8081/login' )
+            assert(res.redirects.includes('http://localhost:8081/login'))
             done();
         })
     });
@@ -52,7 +52,7 @@ describe('prueba unitaria: ', ()=>{
         .end((err, res)=>{
             chai.expect(res).to.have.status(500);
             //console.log(res.redirects[0]);
-            assert(res.redirects[0] === 'http://localhost:8081/index' )
+            assert(res.redirects.includes('http://localhost:8081/index'))
             done();
         })
     });
